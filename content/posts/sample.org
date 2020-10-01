@@ -1,0 +1,20 @@
+---
+title: "Hello World!"
+date: 2020-09-30T21:32:37+08:00
+draft: true
+---
+
+*** Hello World!~
+
+Hello! My name is Daryl (in case you did not catch that on the left pane haha).
+This is my first attempt at building my own website. Well... I did not build it
+from /scratch/ myself. I used a static site generator called [[https://gohugo.io/][Hugo]].
+
+I plan to use this site as a personal blog to write down my thoughts. I may also
+post articles that I find interesting from time to time.
+
+I hope that you will find value in this site as more content is added here.
+
+
+
+*Stay safe out there!*

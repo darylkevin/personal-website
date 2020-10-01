@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Daryl Galvez</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on Daryl Galvez</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 30 Sep 2020 21:32:37 +0800</lastBuildDate>
+    
+	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hello World!</title>
+      <link>/posts/first_post/</link>
+      <pubDate>Wed, 30 Sep 2020 21:32:37 +0800</pubDate>
+      
+      <guid>/posts/first_post/</guid>
+      <description>Hello World!~   Hello! My name is Daryl (in case you did not catch that on the left pane haha). This is my first attempt at building my own website. Well… I did not build it from scratch myself. I used a static site generator called Hugo.  I plan to use this site as a personal blog to write down my thoughts. I may also post articles that I find interesting from time to time.</description>
+    </item>
+    
+  </channel>
+</rss>

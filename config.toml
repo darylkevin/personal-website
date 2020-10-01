@@ -13,7 +13,9 @@ paginate = 5
   [[params.social]]
     name = "linkedin"
     url = "https://www.linkedin.com/in/daryl-galvez/"
-
+  [[params.social]]
+    name = "file-text"
+    url = "/posts/sample"
   # Brown theme
   #[params.style]
   #  darkestColor = "#463625"

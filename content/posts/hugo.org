@@ -1,0 +1,19 @@
+---
+title: "Hugo"
+date: 2020-10-02T20:55:12+08:00
+draft: true
+---
+
+** Creating a static website using Hugo
+In this post, I would like to talk about Hugo and detail how I managed to create this website.
+
+*** What is Hugo?
+According to their [[https://gohugo.io/about/what-is-hugo/][About Page]], Hugo is a fast and modern static site generator written in
+the Go programming language. To put it simply, Hugo helps you build the frame work for your
+website without getting your hands dirty with coding. You can focus on creating your content
+and then Hugo does the rest.
+
+Of course, Hugo still provides you the freedom to code and tweak your website if that's what you
+want. Hugo just makes it easier for you to do so.
+
+You can read more about the benefits of using Hugo or any other static site generator [[https://gohugo.io/about/benefits/][here]].

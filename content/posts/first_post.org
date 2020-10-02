@@ -6,7 +6,7 @@ draft: false
 
 *** Hello World!~
 
-Hello! My name is Daryl (in case you did not catch that on the left pane haha).
+Hello! My name is Daryl (in case you did not catch that on the main pane haha).
 This is my first attempt at building my own website. Well... I did not build it
 from /scratch/ myself. I used a static site generator called [[https://gohugo.io/][Hugo]].
 

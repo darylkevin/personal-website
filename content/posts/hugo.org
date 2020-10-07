@@ -87,6 +87,18 @@ To view your site locally, go to your browser and go to ~http://localhost:1313/~
 files and view your changes on the fly (you may need to refresh the page or restart the server at times
 before you can see the changes take effect).
 
+**** Build your static pages
+Now that you have created your content and customized your site, your now ready to deploy it on the web.
+To build your static pages, you just need to run this simple command:
+
+#+BEGIN_SRC sh
+hugo
+#+END_SRC
+
+This command will generate a public folder which will contain all static pages and assets that your website
+needs. This can now be deployed on any webserver of your liking.
+
+
 ** Final Thoughts
 Making websites has never been easier thanks to static site generators like Hugo. In my next post, we'll explore
 on how we can host our website.

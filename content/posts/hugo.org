@@ -1,5 +1,5 @@
 ---
-title: "Hugo"
+title: "Building my first website using Hugo"
 date: 2020-10-02T20:55:12+08:00
 draft: true
 ---
@@ -17,3 +17,76 @@ Of course, Hugo still provides you the freedom to code and tweak your website if
 want. Hugo just makes it easier for you to do so.
 
 You can read more about the benefits of using Hugo or any other static site generator [[https://gohugo.io/about/benefits/][here]].
+
+*** How to start using Hugo
+Hugo has excellent [[https://gohugo.io/getting-started/quick-start/][documentation]] in their site to get you started on your first website. Let me
+summarize the steps I did:
+
+**** Install Hugo
+You need to install hugo on your computer. Hugo provides excellent step-by-step guide on how to
+install it on various operating systems. You can also check out [[https://www.youtube.com/watch?v=qtIqKaDlqXo&list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3][tutorial videos]] in youtube.
+
+**** Start your first website project
+Create a new project on your local machine or on your device where you have installed Hugo.
+
+#+BEGIN_SRC sh
+hugo new site <project name>
+#+END_SRC
+
+Replace <project name> to your liking.
+
+You can follow the tutorial videos or the hugo documentation and build the site from scratch using
+markdown, HTML, CSS, and Javascript. There is also another option where we can use pre-built themes
+which were developed by contributors to the project. This will make deploying our site faster
+and we can focus on creating content.
+
+**** Add a theme
+Consider adding a theme to your new hugo project. Check out some [[https://themes.gohugo.io/][cool themes here]]. We'll use the example
+in Hugo's documentation for adding a theme.
+
+#+BEGIN_SRC sh
+cd <project name>
+git init
+git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
+#+END_SRC
+
+In this example, we are installing the [[https://themes.gohugo.io/gohugo-theme-ananke/][ananke theme]].
+
+For non-git users, the documentation and tutorials also provide alternative ways to install a theme.
+
+Add this line to your config.toml file after adding a theme.
+
+#+BEGIN_SRC sh
+echo 'theme = "ananke"' >> config.toml
+#+END_SRC
+
+**** Add content to your page
+It's time to fill up your page with your ideas and content! You can create files manually and place
+metadata yourself or you can use hugo's built-in command and let hugo do it for you.
+
+#+BEGIN_SRC sh
+hugo new <name of file>
+#+END_SRC
+
+You can then edit the file to your liking.
+
+**** Check out your site
+Check out how your site and content will look like. Hugo provides a command which allows you to
+host your site locally so you can see how your new website will look like once you deploy. Use the
+command:
+
+#+BEGIN_SRC sh
+hugo server -D
+#+END_SRC
+
+The ~-D~ flag is necessary if you want to display draft pages as well. Change the frontmatter/metadata
+in your content to say ~draft: false~ in order for that file to be deployed without the ~-D~ flag or
+if you want that file to be displayed once you deploy your site on the web.
+
+To view your site locally, go to your browser and go to ~http://localhost:1313/~. You can edit your site
+files and view your changes on the fly (you may need to refresh the page or restart the server at times
+before you can see the changes take effect).
+
+** Final Thoughts
+Making websites has never been easier thanks to static site generators like Hugo. In my next post, we'll explore
+on how we can host our website.

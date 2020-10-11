@@ -23,7 +23,7 @@ disqusShortname = ""
     #gravatar = "john.doe@example.com"
     footercontent = "This website stands is made thanks to the contributions from the open-source communities. My work is standing on the foundations they built."
 
-    dateformat = "02 January 2006"
+    dateformat = "02 Jan 2006"
 
     hideFooter = false
     hideCredits = false
@@ -83,33 +83,12 @@ disqusShortname = ""
     icon = "fa fa-github"
     weight = 1
     url = "https://github.com/darylkevin/"
-# [[params.social]]
-#     name = "Gitlab"
-#     icon = "fa fa-gitlab"
-#     weight = 2
-#     url = "https://gitlab.com/johndoe/"
-# [[params.social]]
-#     name = "Twitter"
-#     icon = "fa fa-twitter"
-#     weight = 3
-#     url = "https://twitter.com/johndoe/"
+
 [[params.social]]
     name = "LinkedIn"
     icon = "fa fa-linkedin"
     weight = 4
     url = "https://www.linkedin.com/in/daryl-galvez/"
-# [[params.social]]
-#     name = "Medium"
-#     icon = "fa fa-medium"
-#     weight = 5
-#     url = "https://medium.com/@johndoe"
-# [[params.social]]
-#     name = "RSS"
-#     icon = "fa fa-rss"
-#     weight = 6
-#     url = "https://myhugosite.com/index.xml"
-#     rel = "alternate"
-#     type = "application/rss+xml"
 
 
 [languages]
@@ -138,36 +117,16 @@ disqusShortname = ""
             weight = 5
             url = "contact/"
 
-
-    # [languages.pt-br]
-    #     languagename = "Português"
-    #     title = "João Ninguém"
-
-    #     [languages.pt-br.params]
-    #         author = "João Ninguém"
-    #         info = "Full Stack DevOps e Mágico"
-    #         description = "Sítio pessoal de João Ninguém"
-    #         keywords = "blog,desenvolvedor,pessoal"
-    #         footercontent = "Coloque algum texto aqui."
-
-    #     [languages.pt-br.menu]
-
-    #         [[languages.pt-br.menu.main]]
-    #         name = "Sobre"
-    #         weight = 1
-    #         url = "about/"
-
-    #         [[languages.pt-br.menu.main]]
-    #         name = "Blog"
-    #         weight = 2
-    #         url = "posts/"
-
-    #         [[languages.pt-br.menu.main]]
-    #         name = "Projetos"
-    #         weight = 3
-    #         url = "projects/"
-
-    #         [[languages.pt-br.menu.main]]
-    #         name = "Contato"
-    #         weight = 5
-    #         url = "contact/"
+# Menu links
+[[menu.main]]
+    name = "Blog"
+    weight = 1
+    url  = "/posts/"
+[[menu.main]]
+    name = "About"
+    weight = 2
+    url = "/about/"
+[[menu.main]]
+    name = "Contact Me"
+    weight = 3
+    url = "#"

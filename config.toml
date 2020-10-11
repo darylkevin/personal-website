@@ -7,7 +7,7 @@ paginate = 5
 
 [params]
   author = "Daryl Galvez"
-  description = "Welcome to my personal website and blog!"
+  description = "Engineering, Technology, and FOSS Enthusiast. Feel free to read my posts or click on the icons to find me on other platforms. Peace!"
   [[params.social]]
     name = "github"
     url = "https://github.com/darylkevin"

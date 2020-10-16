@@ -1,3 +1,5 @@
+tags= ["personal", "website", "daryl galvez", "daryl", "galvez"]
+
 baseurl = ""
 title = "Hello, Friend."
 
@@ -18,7 +20,7 @@ disqusShortname = ""
     author = "Daryl Galvez"
     description = "My Personal Website"
     keywords = "blog, developer, personal, software"
-    info = "Marine Engineer, Software Developer, and FOSS Enthusiast"
+    info = "Marine Engineer, Software Developer, and FLOSS Advocate and Enthusiast"
     avatarurl = "avatar.jpg"
     #gravatar = "john.doe@example.com"
     footercontent = "This website stands is made thanks to the contributions from the open-source communities. My work is standing on the foundations they built."

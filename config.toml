@@ -117,4 +117,4 @@ disqusShortname = ""
             [[languages.en.menu.main]]
             name = "Hire me"
             weight = 5
-            url = "contact/"
+            url = "hireme/"

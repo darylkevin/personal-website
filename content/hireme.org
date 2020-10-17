@@ -1,0 +1,20 @@
+---
+title: "Hire Me"
+date: 2020-10-17T08:24:27+08:00
+draft: true
+author: "Daryl Galvez" 
+description: ""
+slug: "" 
+tags: []
+categories: []
+externalLink: ""
+series: []
+---
+
+Hi! I'm open for new opportunities and challenges. If you're looking for a new developer, please hit me up!
+
+You may send me a message on [[https://www.linkedin.com/in/daryl-galvez/][Linkedin]] or browse my small projects in [[https://github.com/darylkevin][Github.]]
+
+For security and privacy reasons, I'll be sending my CV only upon request.
+
+Looking forward to working with you!

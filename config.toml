@@ -1,6 +1,6 @@
 tags= ["personal", "website", "daryl galvez", "daryl", "galvez"]
 
-baseurl = ""
+baseurl = "https://darylgalvez.xyz"
 title = "Hello, Friend."
 
 theme = "hugo-coder"

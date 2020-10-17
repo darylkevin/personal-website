@@ -1,0 +1,12 @@
+---
+title: "About"
+date: 2020-10-11T21:53:21+08:00
+draft: true
+author: "Daryl Galvez"
+---
+
+** About
+Hi! I'm Daryl Galvez and this is my personal website/blog. I'm a marine engineer by profession and I am an aspiring IT professional.
+I am fairly new to the industry and am still learning the ropes, but in "millenial" years, considered relatively "old". :p
+
+I do hope that I can contribute what I learned from my time being a marine engineer to the tech industry.

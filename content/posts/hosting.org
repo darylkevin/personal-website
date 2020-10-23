@@ -1,0 +1,63 @@
+---
+title: "Hosting our Hugo Website"
+date: 2020-10-21T19:55:16+08:00
+draft: false
+author: "Daryl Galvez" 
+description: "This post aims to detail how I publish and host my hugo website using github and netlify."
+slug: "" 
+tags: ["netlify", "hugo", "github"]
+categories: ["blog", "web", "website"]
+externalLink: ""
+series: []
+---
+
+In my previous post, I explained how I was able to build my personal site using Hugo static site generator.
+Obviously, the next step for us is to publish our newly created website to the interwebs. In this post,
+I will guide you on the steps I took. Of course there are numerous ways to publish and host our website,
+but we'll be focusing on Netlify and Github here.
+
+
+** Upload your site to a repository (Github)
+
+We'll need to upload our code to a code hosting service. There are two notable websites for this purpose:
+Github and Gitlab. Of course, there are other websites out there available for this purpose but we'll be
+focusing on Github for now as it's the one I used.
+
+Please see Github [[https://docs.github.com/en/free-pro-team@latest/desktop/installing-and-configuring-github-desktop/creating-your-first-repository-using-github-desktop][documentation]] on how to get started.
+
+Make sure that the repository is set to ~public~ otherwise we won't be able to publish it.
+
+** Host your site on a hosting service (Netlify)
+
+[[https://www.netlify.com/][Netlify]] provides the easiets and most affordable option for me to deploy my website. You can literally deploy
+your website in seconds.
+
+*** How to setup
+
+You will need a netlify account to get started. Fortunately, netlify provides an easy way to set up your account.
+
+**** Connect to a Git provider
+
+Netlify has good integration with Github, Gitlab, and Bitbucket. I linked my Github account to Netlify and that served as my account registration as well.
+
+**** Select a repository
+
+After linking your account, you will be prompted with a selection on where you want to pull your website's code from.
+You can opt to have Netlify have access to all your repositories and that would make it easier for you in the future
+to just publish sites. In my case, I selected GitHub and selected only the repositories which I want Netlify to access.
+
+**** Select build options and deploy
+
+On this part, you can select which branch you would like to deploy. In my case I used the ~master~.
+
+Next, you need to specify a =build= command for your website. In our case, our build command is simple ~hugo~.
+
+Another thing that we need to tweak is the =Advanced build settings=. Some themes will need a specific version of hugo
+for it to build properly. So what I did was I specified the =Key:Value= pair in this section as ~HUGO_VERSION~ and ~0.72.0~. You can specify a later version as well if you require it.
+
+After making sure that everything is set up, you can now click the =Deploy site= button.
+
+** Enjoy your site
+
+And that's it! Netlify will then build your site and have it ready in no time. What's good with Netlify is whenever you push new content or modify your code
+in your repository, all the changes gets pulled to Netlify as well and it gets built and published automatically.

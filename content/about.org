@@ -5,7 +5,15 @@ draft: false
 author: "Daryl Galvez"
 ---
 
-Hi! I'm Daryl Galvez and this is my personal website/blog. I'm a marine engineer by profession and I am an aspiring IT professional.
-I am fairly new to the industry and am still learning the ropes, but in "millenial" years, considered relatively "old". :p
+Hi! Welcome to my personal website and blog. I'm Daryl Galvez, an aspiring IT professional. I have previously worked as a marine engineer and now,
+I am exploring my passion in technology and I hope that I'm able to work in the industry in the future.
 
-I do hope that I can contribute what I learned from my time being a marine engineer to the tech industry.
+I will be using this website as a professional site as well as a practice for my writing (Apologies in advance for the amateur writing style.) My
+focus here will be mainly about technology, Free, Libre, and Open Source Software, and anything under the sun.
+
+In the future, I would like to write better and cover deeper topics.
+
+I hope you will find value in this website. Reach out to me and tell me what you think :)
+
+
+Stay safe.

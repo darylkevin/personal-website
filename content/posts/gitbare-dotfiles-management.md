@@ -31,3 +31,36 @@ One way you can control your dotfiles is if you place them in a folder and send 
 
 You can track changes made in your dotfiles, use different branches if you want to try out a completely different configuration, clone your dotfiles to a new machine or a new installation to replicate what you have in another system, and revert back to a previous configuration. This is all built-in with `git`.
 
+# How does this work?
+
+This is pretty much how you would use `git`. You can use the same commands for adding files, removing files, staging, committing, and pushing them to a remote repository. 
+
+What's different is that we'll be using a `Git bare repository`. This is basically like the `.git` hidden directory in your normal git repositories. An alias will be used in order for our commands so that it will not interfere with any other local git repositories.
+
+# Getting started
+
+We'll start by initializing a `git bare repository`.
+
+```sh
+git init --bare $HOME/.cfg
+```
+
+Change `.cfg` to any name you wish. This is just an arbitrary name for our repository. 
+
+Define an alias for the command. You can also use any other alias that you would want. This is for brevity only. We don't want typing lengthy commands everytime!
+
+```sh
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+```
+
+Run this next command to hide all files that we are not explicitly keeping track of.
+
+```sh
+config config --local status.showUntrackedFiles no
+```
+
+Add the alias to your `.bashrc` or `.zshrc` or `config.fish` for convenience. You can also run this command to save you time.
+
+```sh
+echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.bashrc
+```

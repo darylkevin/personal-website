@@ -64,3 +64,22 @@ Add the alias to your `.bashrc` or `.zshrc` or `config.fish` for convenience. Yo
 ```sh
 echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.bashrc
 ```
+
+And that's it! You have successfully set up your `git bare repository`. You can pass `git` commands to your alias and add your dotfiles and other configurations. Of course, this is not limited to just dotfiles. You can add all kinds of files and directories here.
+
+```sh
+config status
+config add .bashrc
+config commit -m "Add bashrc"
+config push
+```
+
+# Cloning your previous configurations to your new installation
+
+So you have decided to do a clean install of your operating system and you want to have it configured fast. Your `git repository` is here and ready to settle in your new system.
+
+Set up your alias before starting. You may just type it in your terminal or add it to your `.bashrc`, `.zshrc`, `config.fish`.
+
+```sh
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+```

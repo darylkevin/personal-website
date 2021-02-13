@@ -1,7 +1,7 @@
 ---
 title: "Dotfiles Management using a Git Bare Repository"
 date: 2021-02-12T14:33:49+08:00
-draft: true
+draft: false
 author: "Daryl Galvez" 
 description: ""
 slug: "" 
@@ -144,3 +144,21 @@ Personally, I just force the checkout without backing up the files, I usually do
 ```sh
 config checkout -f
 ```
+
+Once you run `config status`, you may see a lot of untracked files again. Let's set the `showUntrackedStatus` flag to `no` again so we'll only see files which we only explicitly track.
+
+`config config --local status.showUntrackedFiles no`
+
+Your set up is now complete and you can now add and update files using your `config` alias and `git` commands.
+
+```sh
+config status
+config add .bashrc
+config commit -m "Add bashrc"
+config push
+```
+
+This setup may be a bit confusing at first but once you get the hang of it, then you'll see how simple it really is.
+
+
+Next time, we'll be looking into how to set up your ideal workstation using **Ansible**. 

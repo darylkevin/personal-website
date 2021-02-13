@@ -3,9 +3,9 @@ title: "Dotfiles Management using a Git Bare Repository"
 date: 2021-02-12T14:33:49+08:00
 draft: false
 author: "Daryl Galvez" 
-description: ""
+description: "A simple way of managing your dotfiles or configuration files"
 slug: "" 
-tags: []
+tags: [git, github, dotfiles, configuration files, set up]
 categories: []
 externalLink: ""
 series: []

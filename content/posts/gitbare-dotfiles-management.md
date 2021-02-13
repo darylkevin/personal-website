@@ -83,3 +83,64 @@ Set up your alias before starting. You may just type it in your terminal or add 
 ```sh
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 ```
+
+Add your git bare repository to a `.gitignore` file. This will help you avoid any recursion problems.
+
+```sh
+echo ".cfg" >> .gitignore
+```
+Again, `.cfg` is an arbitrary directory name. You can use any folder name you wish. 
+
+You're now ready to clone your dotfiles into a `git bare` repository. Take note that you will need to use your the directory you specified in the previous step, replacing the `.cfg` directory in this command.
+
+```sh
+git clone --bare <git-repo-url> $HOME/.cfg
+```
+
+Make sure that your alias is defined in your current shell scope. If you have the alias in your `.bashrc`, `.zshrc`, or `config.fish`, you may need to `source` them again for the alias to take effect.
+
+```sh
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+```
+
+Or
+
+```sh
+source .bashrc
+```
+
+Checkout the contents of your `bare repository` to your `$HOME` directory.
+
+```sh
+config checkout
+```
+
+Of course, this command might fail as you might have similarly named files already in your new installation. You may see errors such as the one below.
+
+```sh
+error: The following untracked working tree files would be overwritten by checkout:
+    .bashrc
+    .gitignore
+Please move or remove them before you can switch branches.
+Aborting
+```
+
+There is a solution mentioned in an article in Atlassian written by [@durdn](https://www.atlassian.com/git/tutorials/dotfiles). It involes backing up the files using a shell script. I think this is an elegant and efficient way for backing up files causing the checkout error.
+
+```sh
+mkdir -p .config-backup && \
+config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
+xargs -I{} mv {} .config-backup/{}
+```
+
+After running the above, run the checkout command again.
+
+```sh
+config checkout
+```
+
+Personally, I just force the checkout without backing up the files, I usually do this in a new installation so I don't really mind if the old files get overwritten.
+
+```sh
+config checkout -f
+```

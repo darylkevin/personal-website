@@ -33,7 +33,7 @@ Create a new project on your local machine or on your device where you have inst
 hugo new site <project name>
 #+END_SRC
 
-Replace <project name> to your liking.
+Replace ~<project name>~ to your liking.
 
 You can follow the tutorial videos or the hugo documentation and build the site from scratch using
 markdown, HTML, CSS, and Javascript. There is also another option where we can use pre-built themes

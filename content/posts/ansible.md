@@ -24,6 +24,30 @@ Most of the time, this process is long and repetitive. This is where Ansible com
 
 ## ELI5 - Ansible
 
+Ansible is a program that executes "plays" or tasks on a host or several hosts. Tasks can range from a simple shell script execution to complex configuration management. These tasks are declared in a YAML file where Ansbile can read what you want it to do.
+
+To drive the point more clearly, let me use an example used in a Fedora Magazine article. Basically, when you define a play, it will look like this conceptually:
+
+```sh
+for HOST in $HOSTS; do
+    ssh $HOST /usr/bin/echo "Hello World"
+done
+```
+
+The above example is easy to understand but Ansible provides an easier syntax through YAML. Since the play/s are written in a YAML file, it can be easily written and understood by everyone, even to those who have not used Ansible before. The same task can be rewritten like so:
+
+```yaml
+- hosts: all
+  tasks:
+    - name: Hello World
+      ansible.builtin.shell:
+      cmd: /usr/bin/echo "Hello World"
+```
+
+We'll get to more examples later.
+
+## Ansible Playbook
+
 
 
 #### References:

@@ -20,10 +20,13 @@ Let's dive into the basics of setting up your workstation environment (whether i
 
 Ansible is a powerful tool despite it being easy to use. It can automate most of the tasks that we usually do when we start out with a new system. Most of us apply a few 'tweaks' to our systems to suit our tastes, be it setting up a wallpaper, applying icon themes, or installing and uninstalling programs.
 
-Sometimes, this can take some time and this is where Ansible comes in.
+Most of the time, this process is long and repetitive. This is where Ansible comes in.
 
 ## ELI5 - Ansible
 
+
+
 #### References:
-[Using Ansible to set up a workstation by Link Dupont](https://fedoramagazine.org/using-ansible-setup-workstation/)
-[How to manage your workstation configuration with Ansible by Jay LaCroix](https://opensource.com/article/18/3/manage-workstation-ansible)
++ [Using Ansible to set up a workstation by Link Dupont](https://fedoramagazine.org/using-ansible-setup-workstation/)
+
++ [How to manage your workstation configuration with Ansible by Jay LaCroix](https://opensource.com/article/18/3/manage-workstation-ansible)

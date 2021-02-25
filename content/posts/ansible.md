@@ -54,28 +54,34 @@ My distro of choice is **Fedora** so i'll install Ansible using _dnf_.
 sudo dnf install ansible
 ```
 
-Once you have ansible installed, you can create a `.yml`
-
--------------------
-
-You can then run the play using the following command:
+Once you have Ansible installed, you can create a `.yml` where we can start telling Ansible what to do once we run it. I will save this file as `install.yml`.
 
 ```sh
-ansible-playbook /path/to/your/play.yml
+touch install.yml
 ```
+
+For this example, we can try out installing packages using Ansible. Place this in your `.yml` file. 
+
+```yml
+- hosts: localhost
+  become: true
+  tasks:
+  - name: Install packages
+    dnf:
+    name: htop
+```
+
+You can execute your play by this command: `ansible-playbook /path/to/your/play.yml`. So for our example, the command will be:
+
+```sh
+ansible-playbook ~/install.yml
+```
+
+If you don't have `htop` installed yet on your system, after executing the play, you should be able to see it installed in your system now.
 
 The contents of a play or a playbook basically describes what *state* you want the machine to have. Once you invoke Ansible to execute a play, it will check the host/s against the play and performs *only* the tasks necessary to achieve the state in the workbook. That means, Ansible will skip parts of the play if that state is already present in the current host.
 
-For example, we have defined a play:
-
-```sh
-- name: Install the latest version of Apache
-  dnf:
-    name: httpd
-    state: latest
-```
-
-If the latest version of Apache (httpd) is found by Ansible to be already installed, it will skip that play entirely.
+That is to say, if you try to re-run the play `ansible-playbook /path/to/your/play.yml`, Ansible will not attempt to reinstall the `htop` package again since it can see that it's already in the system. If you do want to reinstall an already existing program, there should be a way to explicitly tell Ansible to do so.
 
 ## Ansible Playbook
 

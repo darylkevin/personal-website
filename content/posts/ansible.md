@@ -66,7 +66,7 @@ For this example, we can try out installing packages using Ansible. Place this i
 - hosts: localhost
   become: true
   tasks:
-  - name: Install packages
+  - name: Install htop
     dnf:
     name: htop
 ```
@@ -82,6 +82,40 @@ If you don't have `htop` installed yet on your system, after executing the play,
 The contents of a play or a playbook basically describes what *state* you want the machine to have. Once you invoke Ansible to execute a play, it will check the host/s against the play and performs *only* the tasks necessary to achieve the state in the workbook. That means, Ansible will skip parts of the play if that state is already present in the current host.
 
 That is to say, if you try to re-run the play `ansible-playbook /path/to/your/play.yml`, Ansible will not attempt to reinstall the `htop` package again since it can see that it's already in the system. If you do want to reinstall an already existing program, there should be a way to explicitly tell Ansible to do so.
+
+## Installing multiple packages
+
+With the example above, you can see how you can use Ansible to install multiple packages.
+
+```yml
+- hosts: localhost
+  become: true
+  tasks:
+  - name: Install htop
+    dnf:
+    name: htop
+  - name: Install qtile
+    dnf:
+    name: qtile
+  - name: Install evolution
+    dnf:
+    name: evolution
+```
+
+Instead of typing repetitive lines, Ansible provides us a more efficient way of declaring multiple packages for installation.
+
+```yml
+- hosts: localhost
+  become: true
+  tasks:
+  - name: Install packages
+    dnf:
+    name: 
+    - htop
+    - qtile
+    - evolution
+```
+
 
 ## Ansible Playbook
 

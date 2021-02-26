@@ -117,10 +117,50 @@ Instead of typing repetitive lines, Ansible provides us a more efficient way of 
 ```
 
 
-## Ansible Playbook
+## Ansible Taskbook
 
-Of course, you would not want to invoke Ansible numerous times over different plays just to set up your system; that would be very counter-intuitive. What we can do is group plays into a *playbook*. A playbook is basically a collection of plays. With this you can declare plays in separate `.yml` files and keep the names of those files in the playbook. Once you're done, you can just invoke Ansible in that playbook and it will execute all the plays declared in the playbook `.yml` file.
+As you keep on adding plays into your Ansible file, such as removing packages and executing shell scripts, it would make sense to segregate them into separate files so that the main playbook will not get too cluttered. What we can do is group plays into a *Taskbook*. A Taskbook is basically a collection of plays. With this you can declare plays in separate `.yml` files and keep the names of those files in the Taskbook. Once you're done, you can just invoke Ansible in that Taskbook and it will execute all the plays declared in the Taskbook `.yml` file.
 
+You can keep the extracted plays in the same directory as the main taskbook but for sake of organization, let's put the plays in a separate `tasks` directory.
+
+```sh
+mkdir tasks
+```
+
+Next, we'll create a new file in the tasks directory which will solely contain the play for package installation.
+
+```sh
+touch tasks/install_packages.yml
+```
+
+We'll place the play in that file.
+
+```yml
+- name: Install packages
+  become_user: true
+  become: user
+  dnf:
+  name: 
+  - htop
+  - qtile
+  - evolution
+```
+
+We'll rename our first `.yml` file to `taskbook.yml` since we will not be using it only for installing packages. We'll edit the contents to reflect the new playbook in our `tasks` directory.
+
+
+```yml
+- hosts: localhost
+  become: true
+  pre_tasks:
+    - name: Do a system upgrade first
+      dnf:
+        name: "*"
+        state: latest
+
+  tasks:
+    - include: tasks/install_packages.yml
+```
 
 
 
@@ -128,3 +168,5 @@ Of course, you would not want to invoke Ansible numerous times over different pl
 + [Using Ansible to set up a workstation by Link Dupont](https://fedoramagazine.org/using-ansible-setup-workstation/)
 
 + [How to manage your workstation configuration with Ansible by Jay LaCroix](https://opensource.com/article/18/3/manage-workstation-ansible)
+
++ [Official Ansible Documentation](https://docs.ansible.com/)

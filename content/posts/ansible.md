@@ -1,7 +1,7 @@
 ---
 title: "Automate your workstation setup using Ansible"
 date: 2021-02-21T16:17:10+08:00
-draft: true
+draft: false
 author: "Daryl Galvez" 
 description: "Use Ansible to set up your workstation"
 slug: "" 
@@ -162,6 +162,12 @@ We'll rename our first `.yml` file to `taskbook.yml` since we will not be using 
     - include: tasks/install_packages.yml
 ```
 
+By doing this, we can keep the main taskbook clean and easy to read. It also makes adding and removing plays easier by just declaring the play file path in the taskbook and declaring the actual task in another file.
+
+I added the `pre_tasks` section to ensure that `dnf` does an update of the existing packages which also ensures that the cache is updated as well for the next packages to be installed. 
+
+## Final thoughts
+This is just scratching the surface of what Ansible can do. I am still learning on how to best implement this technology myself. Hopefully, you can see how this will fit in your workflow as well. There are a lot of resources which you can refer to if you want to learn more.
 
 
 #### References:

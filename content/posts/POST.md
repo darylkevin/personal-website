@@ -15,6 +15,6 @@ As some of you might have known, I just passed my CompTIA A+ certification exam.
 
 ## What happened?
 
-I got a message from my girlfriend telling me that they have a problem in their clinic. My girlfriend actually is a dentist and she has this really expensive Xray machine called a CBCT. It is connected to a PC workstation where all the scans from that CBCT is fed, read, and printed. She told me that that workstation cannot start. (insert video link)
+I got a message from my girlfriend telling me that they have a problem in their clinic. My girlfriend actually is a dentist and she has this really expensive Xray machine called a CBCT. It is connected to a PC workstation where all the scans from that CBCT is fed, read, and printed. She told me that that workstation cannot start. They really need that workstation up and running, otherwise her clinic won't be able to service patients' needs and will set them back thousands pesos everyday that the workstaiton stays down. (insert video link)
 
-
+## Diagnosis

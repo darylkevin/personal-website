@@ -72,7 +72,7 @@ I hope you learned a lot from this as well :)
 
 #### References
 
-[POST Troubleshooting Steps](https://www.computerhope.com/issues/ch000607.htm)
-[Professor Messer](https://www.professormesser.com/)
-[Jason Dion](https://www.jasondion.com/)
-[Mike Meyers](https://www.totalsem.com/)
+[POST Troubleshooting Steps](https://www.computerhope.com/issues/ch000607.htm)  
+[Professor Messer](https://www.professormesser.com/)  
+[Jason Dion](https://www.jasondion.com/)  
+[Mike Meyers](https://www.totalsem.com/)  

@@ -137,3 +137,71 @@ To change your default zone (e.g. `public` to `home`):
 ```sh
 firewall-cmd --set-default-zone=<name of zone>
 ```
+
+To get all the services available:
+
+```sh
+firewall-cmd --get-services
+```
+
+To get information on all the services listed by the command above, navigate to:
+
+```sh
+cd /usr/lib/firewalld/services
+```
+
+You can `cat` the file for the description of the services listed. All these services are predefined.
+
+If you want to add a particular service to your zone, you can run the command:
+
+```sh
+firewall-cmd --add-service=<name of service>
+```
+
+Please note that the service added by the above method will be gone after a reboot/ restart of the service.
+
+If you want a service to be permanently added to a zone, run the command:
+
+```sh
+firewall-cmd --permanent --add-service=<name of service>
+```
+
+Always add the `--permanent` flag to add changes permanently.
+
+After making changes, reload your firewalld:
+
+```sh
+firewall-cmd --reload
+```
+
+If you want to list all services activated for a particular zone:
+
+```sh
+firewall-cmd --zone=<name of zone> --list-services
+```
+
+In case a service is not available on the default list (e.g. a custom service) and you want to add that service's particular port, you can use:
+
+```sh
+firewall-cmd --permanent --add-port=<port number>/<protocol>
+```
+
+For example:
+
+```sh
+firewall-cmd --permanent --add-port=9090/tcp
+```
+
+Port ranges can also be defined by the above command:
+
+```sh
+firewall-cmd --permanent --add-port=9000-9090/tcp
+```
+
+
+To define a service (i.e. create a custom service) which is not included in one of the defaults, you can copy one of the samples from `/usr/lib/firewalld/services/` into `/etc/firewalld/services/` directory and edit the copied service file to define all that's needed i.e. name, description, ports, and protocols. Note that you can define multiple ports and protocols here. 
+
+```sh
+cp /usr/lib/firewalld/services/ssh.xml /etc/firewalld/services/custom_service.xml
+vim /etc/firewalld/services/custom_service.xml
+```

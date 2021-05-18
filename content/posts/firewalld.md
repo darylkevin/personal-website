@@ -111,8 +111,29 @@ To check what zones are available:
 firewall-cmd --get-zones
 ```
 
-To check what rules are applied to a specific zone (e.g. home):
+To check what rules and services are applied to a specific zone (e.g. home):
 
 ```sh
 firewall-cmd --zone=home --list-all
+```
+
+To check what rules and services are applied to all zones:
+
+```sh
+firewall-cmd --list-all-zones
+```
+
+To change an interface's zone (e.g. from `public`  to `home`):
+
+```sh
+firewall-cmd --zone=home --change-interface=<interface name>
+```
+
+Note that this change will not be permanent.
+
+  
+To change your default zone (e.g. `public` to `home`):
+
+```sh
+firewall-cmd --set-default-zone=<name of zone>
 ```

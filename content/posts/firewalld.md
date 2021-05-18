@@ -56,3 +56,23 @@ sudo systemctl enable --now firewalld
 ```
 
 Firewall rules can be controlled with the `firewall-cmd` command in your terminal. If you want a GUI interface, `firewall-config` is available for your use and should come preinstalled with the firewalld package.
+
+### Firewall zones
+
+Firewalld manages a set of predefined firewall rules with the use of zones. These zones are based on levels of trust a user has on an interface and its connection. 
+
+Different zones will have different rules, i.e. a trusted zone may have more ports open and a less trusted zone will be more restrictive.
+
+#### Levels of trust in zones
+
+Ranked from least trusted to most trusted:
+
++ Drop Zone - all incoming connections are dropped without any warnings. 
++ Block Zone - similar with drop zone but with ICMP replies enabled.
++ Public Zone - interface is connected to an untrusted network but may allow selected connections on case basis. 
++ External Zone - this zone is commonly used if your firewall is used as a gateway. This is configured for NAT. 
++ Internal Zone - computers are trusted and some extra services are available.
++ DMZ Zone - only certain _incoming_ connections are allowed.
++ Work Zone - majority of hosts are trusted in the network. More services are allowed here.
++ Home Zone - Your home network. Trust all hosts in the network. More services are allowed.
++ Trusted Zone - Everyone is trusted. This should be used _very rarely and carefully_.

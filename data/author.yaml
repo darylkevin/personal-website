@@ -1,0 +1,18 @@
+# some information about you
+name: "Daryl Galvez"
+nickname: "Daryl"
+image: "static/images/avatar.png"
+
+# greeting message before your name. it will default to "Hi! I am" if not provided
+greeting: "Hi, I am Daryl! Welcome to my personal website."
+
+# give your contact information. they will be used in the footer
+contactInfo:
+  email: "daryl.kevin.24@gmail.com"
+  # phone: "+0123456789"
+
+# a summary of what you do
+summary:
+- I am a former Marine Engineer
+- I am exploring cybersecurity
+- I love to work with some fun projects in Linux

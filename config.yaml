@@ -1,7 +1,7 @@
-baseURL: https://hugo-toha.github.io
+baseURL: https://www.darylgalvez.xyz
 
 languageCode: en-us
-title: "John's Blog"
+title: "darylgalvez@mysite"
 theme: "toha"
 
 # Manage languages
@@ -32,7 +32,8 @@ enableEmoji: true
 # Site parameters
 params:
   # GitHub repo URL and branch of your site
-  gitRepo: https://github.com/hugo-toha/hugo-toha.github.io
+  # gitRepo: https://github.com/hugo-toha/hugo-toha.github.io
+  gitRepo: https://github.com/darylkevin/personal-website
   gitBranch: main
 
   # specify whether you want to write some blog posts or not
@@ -46,7 +47,7 @@ params:
   # You can also hide it from the footer.
   newsletter:
     # specify whether you want to display the newsletter form 
-    enable: true
+    enable: false
     # specify which newsletter provider you want to use
     provider: mailchimp
     # specify the target URL for the subscription form

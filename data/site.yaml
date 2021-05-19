@@ -1,1 +1,8 @@
 copyright: © 2020 Copyright.
+
+# Meta description for your site.  This will help the search engines to find your site.
+description: Daryl Galvez personal website and blog.
+
+customMenus:
+- name: Notes
+  url: https://hossainemruz.gitbook.io/notes/

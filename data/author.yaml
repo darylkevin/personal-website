@@ -1,10 +1,10 @@
 # some information about you
 name: "Daryl Galvez"
-nickname: "Daryl"
+nickname: "Daryl Galvez"
 image: "images/avatar.jpg"
 
 # greeting message before your name. it will default to "Hi! I am" if not provided
-greeting: "Hi, I am Daryl! Welcome to my personal website."
+greeting: "" 
 
 # give your contact information. they will be used in the footer
 contactInfo:
@@ -13,6 +13,6 @@ contactInfo:
 
 # a summary of what you do
 summary:
-- I am licensed Marine Engineer
-- I am currently pursuing a career in cybersecurity
-- I love working with some fun projects using Linux
+- Licensed Marine Engineer
+- Pursuing a career in cybersecurity
+- Uses Linux and other free, libre, open source software for all sorts of fun projects

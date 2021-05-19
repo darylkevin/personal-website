@@ -1,6 +1,6 @@
 ---
 title: "Fiddling with firewalld"
-date: 2021-05-19T17:53:46+08:00
+date: 2021-05-18T17:53:46+08:00
 draft: false
 author: "Daryl Galvez" 
 description: "Exploring firewalld in depth and applying it to our Linux distro."

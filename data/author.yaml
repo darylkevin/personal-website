@@ -1,7 +1,7 @@
 # some information about you
 name: "Daryl Galvez"
 nickname: "Daryl"
-image: "static/images/avatar.png"
+image: "images/avatar.jpg"
 
 # greeting message before your name. it will default to "Hi! I am" if not provided
 greeting: "Hi, I am Daryl! Welcome to my personal website."
@@ -13,6 +13,6 @@ contactInfo:
 
 # a summary of what you do
 summary:
-- I am a former Marine Engineer
-- I am exploring cybersecurity
-- I love to work with some fun projects in Linux
+- I am licensed Marine Engineer
+- I am currently pursuing a career in cybersecurity
+- I love working with some fun projects using Linux

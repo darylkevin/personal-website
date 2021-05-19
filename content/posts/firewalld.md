@@ -198,10 +198,63 @@ Port ranges can also be defined by the above command:
 firewall-cmd --permanent --add-port=9000-9090/tcp
 ```
 
-
 To define a service (i.e. create a custom service) which is not included in one of the defaults, you can copy one of the samples from `/usr/lib/firewalld/services/` into `/etc/firewalld/services/` directory and edit the copied service file to define all that's needed i.e. name, description, ports, and protocols. Note that you can define multiple ports and protocols here. 
 
 ```sh
 cp /usr/lib/firewalld/services/ssh.xml /etc/firewalld/services/custom_service.xml
 vim /etc/firewalld/services/custom_service.xml
 ```
+
+To add a trusted source (host/s, network) to your firewall rules, use:
+
+```sh
+firewall-cmd --permanent --zone=<desired zone> --add-source=<ip address/subnet mask>
+```
+```sh
+firewall-cmd --permanent --zone=public --add-source=192.168.0.222/24
+```
+
+All traffic from trusted source is allowed thru the above command.
+
+Don't forget to reload your firewalld.
+
+### Rule Ordering
+
+Firewall rules are applied in a particular order in order to avoid conflict. All zones follow this order from top to bottom:
+
++ Port forwarding or masquerading rule
++ Logging rules
++ Allow rules
++ Deny rules
+
+If some rules interact/contradict with each other, the first rule that matches gets implemented.
+
+### Rich Rules
+
+Firewalld allows more fine-grained control by the use of rich rules. Rich rules are custom firewall rules.
+
+More details can be found in the `man` pages: `man 5 firewalld.richlanguage`.
+
+```sh
+General rule structure
+
+           rule
+             [source]
+             [destination]
+             service|port|protocol|icmp-block|icmp-type|masquerade|forward-port|source-port
+             [log]
+             [audit]
+             [accept|reject|drop|mark]
+```
+
+An example of a rich rule being declared is shown below:
+
+```sh
+firewall-cmd --permanent --zone=public --add-rich-rules='rule family="ipv4" source address="192.168.0.0/24" service name="tftp" log prefix="tftp" level="info" limit value="1/m" accept'
+```
+
+In the above example, you can see just how much fine tuning we can apply to our firewall when we use rich rules. 
+
+## References
+
++ [RHCE Training - Configuring Firewalld in RHEL 7](https://www.youtube.com/watch?v=jgErVHBz7XI)

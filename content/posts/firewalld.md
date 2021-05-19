@@ -1,7 +1,7 @@
 ---
 title: "Fiddling with firewalld"
-date: 2021-04-13T17:53:46+08:00
-draft: true
+date: 2021-05-19T17:53:46+08:00
+draft: false
 author: "Daryl Galvez" 
 description: "Exploring firewalld in depth and applying it to our Linux distro."
 slug: "" 
@@ -218,6 +218,41 @@ All traffic from trusted source is allowed thru the above command.
 
 Don't forget to reload your firewalld.
 
+To get which zone an interface is placed:
+
+```sh
+firewall-cmd --get-zone-of-interface=<name of interface>
+```
+
+Use `ifconfig` or `ip a` to get your interface name.
+
+To get which services will be available after a reboot:
+
+```sh
+firewall-cmd --get-services --permanent
+```
+
+### Panic mode
+If you want to shutoff all connections immediately, like when you want to protect yourself against an attack, you can use `panic mode`.
+
+```sh
+firewall-cmd --panic-on
+```
+
+If you want to turn `panic mode` off:
+
+```sh
+firewall-cmd --panic-off
+```
+
+To check if you have `panic mode` enabled or not:
+
+```sh
+firewall-cmd --query-panic
+```
+
+It goes without saying that it is __not__ a good idea to activate `panic mode` on a remote machine as it will drop off __all__ connections, including your remote connection to that machine. Be very careful with this one.
+
 ### Rule Ordering
 
 Firewall rules are applied in a particular order in order to avoid conflict. All zones follow this order from top to bottom:
@@ -254,6 +289,7 @@ firewall-cmd --permanent --zone=public --add-rich-rules='rule family="ipv4" sour
 ```
 
 In the above example, you can see just how much fine tuning we can apply to our firewall when we use rich rules. 
+
 
 ## References
 

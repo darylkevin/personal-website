@@ -1,7 +1,7 @@
 ---
 title: "Don't make your firewall complicated"
 date: 2021-05-27T09:40:59+08:00
-draft: true
+draft: false
 author: "Daryl Galvez" 
 description: "This will be a tutorial on how to use UFW, another Linux firewall utility"
 slug: "" 
@@ -90,3 +90,63 @@ To set them up manually:
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 ```
+
+#### Specifying rules
+
+To specify which rules you would like to allow:
+
+```sh
+sudo ufw allow <port/service>
+```
+
+`ufw` accepts both ports and services as arguments.
+ 
+ ```sh
+ sudo ufw allow ssh
+```
+
+or
+
+``` sh
+sudo ufw allow 22
+ ```
+
+Both IPv4 and IPv6 rules will be updated.
+
+#### Explicitly define rules
+
+To explicitly specify allowing connections from a particular `ip`:
+
+```sh
+sudo ufw allow from <ip address>
+```
+
+To explicitly define a rule allowing particular connections from a particular `ip`; i.e. You like to deny all ssh connections unless it comes from a certain `ip`:
+
+```sh
+sudo ufw allow from <ip address/subnet> to any port <port number>
+```
+
+It is important that the `ip` defined is a static IP, otherwise when your IP changes, you may risk a chance of getting blocked by the firewall.
+
+#### Removing rules
+
+To make a detailed list of `ufw rules`;
+
+```sh
+sudo ufw status numbered
+```
+
+From the output of the command above, you can delete rules easily by specifying the rule number:
+
+```sh
+sudo ufw delete <rule number>
+```
+
+Allowing and denying rules is very simple using UFW. Just be sure that you do not use a dynamic IP and you do not accidentally lock yourself remotely from your machine.
+
+
+### Reference
+
+[HackerSploit Youtube Channel](https://www.youtube.com/watch?v=-CzvPjZ9hp8)
+[Ubuntu Wiki](https://wiki.ubuntu.com/UncomplicatedFirewall)
